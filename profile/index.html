@@ -248,6 +248,24 @@
   .service-cta .btn{width:100%;justify-content:center;padding:17px;font-size:15px;}
   @media(min-width:480px){ .service-cta .btn{width:auto;padding:17px 44px;} }
 
+  .plan-heading{max-width:760px;margin:56px auto 26px;text-align:center;}
+  .plan-heading h3{font-family:"Noto Serif JP",serif;font-weight:700;font-size:19px;color:var(--plum-deep);}
+  .plan-heading p{margin-top:10px;font-size:13px;color:var(--ink-soft);line-height:1.9;}
+  .plan-grid{display:grid;grid-template-columns:1fr;gap:18px;max-width:760px;margin:0 auto;}
+  @media(min-width:640px){ .plan-grid{grid-template-columns:1fr 1fr;} }
+  .plan-card{
+    background:#fff;border:1px solid var(--rose-pale);border-radius:18px;
+    padding:30px 26px;text-align:center;box-shadow:0 14px 30px -22px rgba(74,36,54,.35);
+  }
+  .plan-time{font-family:"Cormorant Garamond",serif;font-size:15px;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;font-weight:600;}
+  .plan-name{margin-top:8px;font-family:"Noto Serif JP",serif;font-weight:700;font-size:17px;color:var(--plum-deep);}
+  .plan-price{margin-top:16px;display:flex;align-items:baseline;justify-content:center;gap:10px;}
+  .plan-price-old{font-size:13px;color:var(--ink-soft);text-decoration:line-through;}
+  .plan-price-new{font-family:"Noto Serif JP",serif;font-size:25px;font-weight:900;color:var(--plum);}
+  .plan-note{margin-top:8px;font-size:11px;color:var(--ink-soft);}
+  .plan-cta{margin-top:20px;}
+  .plan-cta .btn{width:100%;justify-content:center;padding:13px;font-size:13px;}
+
   /* ---------- achievements ---------- */
   .ach-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:760px;margin:0 auto;}
   @media(min-width:640px){ .ach-grid{grid-template-columns:1fr 1fr;} }
@@ -481,6 +499,37 @@
         </ul>
         <div class="service-cta">
           <a class="btn btn-line" href="https://lin.ee/X1DwyEg" target="_blank" rel="noopener">LINEで無料相談を予約する</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="plan-heading reveal">
+      <h3>単発セッション</h3>
+      <p>もっとじっくり声と向き合いたい方向けの単発セッションです。<br class="br-pc">声解析を通じて、今の課題やお悩みを一緒に整理していきます。</p>
+    </div>
+    <div class="plan-grid reveal">
+      <div class="plan-card">
+        <p class="plan-time">30 min</p>
+        <h4 class="plan-name">単発セッション 30分</h4>
+        <div class="plan-price">
+          <span class="plan-price-old">通常 11,000円</span>
+          <span class="plan-price-new">5,500円</span>
+        </div>
+        <p class="plan-note">LINE公式アカウントにご登録の方限定価格です</p>
+        <div class="plan-cta">
+          <a class="btn btn-line" href="https://lin.ee/X1DwyEg" target="_blank" rel="noopener">30分で予約する</a>
+        </div>
+      </div>
+      <div class="plan-card">
+        <p class="plan-time">60 min</p>
+        <h4 class="plan-name">単発セッション 60分</h4>
+        <div class="plan-price">
+          <span class="plan-price-old">通常 22,000円</span>
+          <span class="plan-price-new">11,000円</span>
+        </div>
+        <p class="plan-note">LINE公式アカウントにご登録の方限定価格です</p>
+        <div class="plan-cta">
+          <a class="btn btn-line" href="https://lin.ee/X1DwyEg" target="_blank" rel="noopener">60分で予約する</a>
         </div>
       </div>
     </div>
