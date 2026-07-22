@@ -266,6 +266,24 @@
   .plan-cta{margin-top:20px;}
   .plan-cta .btn{width:100%;justify-content:center;padding:13px;font-size:13px;}
 
+  .persona-grid{display:grid;grid-template-columns:1fr;gap:22px;max-width:1000px;margin:0 auto;}
+  @media(min-width:860px){ .persona-grid{grid-template-columns:repeat(3,1fr);} }
+  .persona-card{
+    background:#fff;border:1px solid var(--rose-pale);border-radius:20px;
+    padding:30px 26px;box-shadow:0 16px 34px -24px rgba(74,36,54,.4);
+  }
+  .persona-tag{
+    display:inline-block;background:var(--plum-deep);color:var(--gold-light);
+    font-size:12px;font-weight:700;letter-spacing:.08em;padding:6px 16px;border-radius:999px;
+  }
+  .persona-sub{margin-top:18px;font-size:11.5px;color:var(--gold);font-weight:700;letter-spacing:.1em;}
+  .persona-list{margin-top:10px;list-style:none;}
+  .persona-list li{
+    position:relative;padding-left:16px;margin-bottom:8px;font-size:12.5px;color:var(--ink-soft);line-height:1.8;
+  }
+  .persona-list li::before{content:"・";position:absolute;left:0;color:var(--gold);}
+  .persona-divider{margin:20px 0;height:1px;background:var(--rose-pale);}
+
   /* ---------- achievements ---------- */
   .ach-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:760px;margin:0 auto;}
   @media(min-width:640px){ .ach-grid{grid-template-columns:1fr 1fr;} }
@@ -326,6 +344,7 @@
       <div class="nav-links">
         <a href="#about">Profile</a>
         <a href="#voice">声解析とは</a>
+        <a href="#for-you">こんな方に</a>
         <a href="#service">Service</a>
         <a href="#achievements">実績</a>
         <a href="#connect">Contact</a>
@@ -468,6 +487,75 @@
         <p class="voice-num">03</p>
         <h3>自己肯定感を育む</h3>
         <p>EQ絵本、マヤ暦、心理学の知見を組み合わせ、あなたらしく輝くための土台となる自己肯定感を育みます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who it's for -->
+  <section class="section" id="for-you">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">Who It's For</p>
+      <h2 class="section-title">こんな方におすすめです</h2>
+      <p class="section-lead">声解析は、年代や立場を問わず"自分の声"に悩むすべての方へ。<br class="br-pc">実際の声を通じて変化していった3つのケースをご紹介します。</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="persona-grid reveal">
+      <div class="persona-card">
+        <span class="persona-tag">30代女性</span>
+        <p class="persona-sub">どんな人にいいのか</p>
+        <ul class="persona-list">
+          <li>仕事と子育て・家庭の両立に追われ、頑張っているのに何かが足りないと感じる方</li>
+          <li>会議やプレゼン、面接などで緊張すると声が震えてしまう方</li>
+          <li>資格やセミナーに手を出しても続かず、自分に自信が持てない方</li>
+          <li>「本当にやりたいこと」がわからず、モヤモヤを抱えている方</li>
+        </ul>
+        <div class="persona-divider"></div>
+        <p class="persona-sub">どのように変われるか</p>
+        <ul class="persona-list">
+          <li>緊張で震えていた声が、自信を持って堂々と話せる声に変わっていく</li>
+          <li>面接やプレゼンで自分の言葉が"伝わる"実感を得られる</li>
+          <li>「人の気持ちに寄り添う力」など、気づいていなかった自分の強みに出会える</li>
+          <li>家庭でも心に余裕が生まれ、周囲から「変わったね」と言われるようになる</li>
+        </ul>
+      </div>
+
+      <div class="persona-card">
+        <span class="persona-tag">40代女性</span>
+        <p class="persona-sub">どんな人にいいのか</p>
+        <ul class="persona-list">
+          <li>子育てや仕事が少し落ち着き、これからの自分の人生を考え始めている方</li>
+          <li>長年「誰かのため」に頑張ってきて、本音を後回しにしてきた方</li>
+          <li>人前で話す機会が増えたのに、声や話し方に自信が持てない方</li>
+          <li>これまでの経験やスキルを、どう活かせばいいかわからない方</li>
+        </ul>
+        <div class="persona-divider"></div>
+        <p class="persona-sub">どのように変われるか</p>
+        <ul class="persona-list">
+          <li>我慢していた本音を、自然な言葉と声で伝えられるようになる</li>
+          <li>これまでのキャリアの中に眠っていた強み・才能に気づける</li>
+          <li>声から自分の心の状態を客観視でき、感情に振り回されにくくなる</li>
+          <li>相談員・講師・コンサルなど、人と接する新しい一歩を踏み出す自信がつく</li>
+        </ul>
+      </div>
+
+      <div class="persona-card">
+        <span class="persona-tag">50代男性</span>
+        <p class="persona-sub">どんな人にいいのか</p>
+        <ul class="persona-list">
+          <li>病気や体調の変化をきっかけに、自分の声や話し方に自信を失ってしまった方</li>
+          <li>完璧主義で、知らず知らずのうちにストレスを抱え込みやすい経営者・管理職の方</li>
+          <li>人前で話す機会は多いのに、以前のような自然な声が出せないと感じる方</li>
+          <li>部下やチームに、自分の想いをもっとしっかり伝えたいリーダーの方</li>
+        </ul>
+        <div class="persona-divider"></div>
+        <p class="persona-sub">どのように変われるか</p>
+        <ul class="persona-list">
+          <li>数回のセッションを重ねる中で、声の波形が変化し自然な声が出るようになる</li>
+          <li>ストレスを抱えやすかった思考のクセに気づき、前向きに考えられるようになる</li>
+          <li>「声だけでなく心まで変わった」と感じられるようになる</li>
+          <li>人前でのスピーチや講演で、以前より説得力と信頼感を持って話せるようになる</li>
+        </ul>
       </div>
     </div>
   </section>
