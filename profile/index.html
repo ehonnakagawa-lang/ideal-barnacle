@@ -146,6 +146,7 @@
   }
 
   /* ---------- section shared ---------- */
+  #about, #voice, #for-you, #service, #achievements, #connect{scroll-margin-top:76px;}
   .section{padding:88px 24px;}
   .section-tight{padding:64px 24px;}
   .section-head{text-align:center;max-width:640px;margin:0 auto 52px;}
@@ -191,8 +192,19 @@
   }
 
   /* ---------- about / story ---------- */
-  .story{max-width:760px;margin:0 auto;}
-  .story-intro{font-size:14.5px;color:var(--ink-soft);line-height:2.1;text-align:center;max-width:680px;margin:0 auto 50px;}
+  .story{max-width:900px;margin:0 auto;}
+  .story-top{display:flex;flex-direction:column-reverse;gap:30px;align-items:center;margin-bottom:50px;}
+  .story-photo{
+    width:100%;max-width:380px;border-radius:26px;overflow:hidden;flex-shrink:0;
+    box-shadow:0 26px 54px -28px rgba(139,90,104,.35);border:1px solid var(--rose-pale);
+  }
+  .story-photo img{width:100%;height:auto;display:block;}
+  .story-intro{font-size:14.5px;color:var(--ink-soft);line-height:2.1;text-align:center;max-width:680px;margin:0 auto;}
+  @media(min-width:860px){
+    .story-top{flex-direction:row;align-items:center;gap:52px;}
+    .story-photo{flex:0 0 340px;max-width:340px;}
+    .story-intro{text-align:left;max-width:none;}
+  }
   .timeline{position:relative;padding-left:26px;border-left:2px solid var(--rose-pale);}
   .tl-item{position:relative;padding-bottom:34px;}
   .tl-item:last-child{padding-bottom:0;}
@@ -222,6 +234,11 @@
   }
 
   /* ---------- voice explainer ---------- */
+  .voice-photo{
+    max-width:860px;margin:0 auto 40px;border-radius:28px;overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(139,90,104,.35);border:1px solid var(--rose-pale);
+  }
+  .voice-photo img{width:100%;height:auto;display:block;}
   .voice-grid{display:grid;grid-template-columns:1fr;gap:20px;max-width:920px;margin:0 auto;}
   @media(min-width:760px){ .voice-grid{grid-template-columns:repeat(3,1fr);} }
   .voice-card{
@@ -293,11 +310,12 @@
   }
   .persona-head{display:flex;align-items:center;gap:12px;}
   .persona-avatar{
-    width:46px;height:46px;border-radius:50%;flex-shrink:0;
+    width:48px;height:48px;border-radius:50%;flex-shrink:0;
     background:linear-gradient(160deg,var(--rose-pale),var(--blush));
     display:flex;align-items:center;justify-content:center;
-    font-family:"Noto Serif JP",serif;font-weight:700;color:var(--plum-deep);font-size:15px;
+    border:1px solid rgba(139,90,104,.12);
   }
+  .persona-avatar svg{width:24px;height:24px;fill:var(--plum-soft);}
   .persona-tag{
     display:inline-block;background:var(--plum-deep);color:var(--gold-light);
     font-size:11.5px;font-weight:700;letter-spacing:.06em;padding:5px 14px;border-radius:999px;
@@ -462,11 +480,16 @@
     </div>
 
     <div class="story reveal">
-      <p class="story-intro">
-        実は私自身、繊細な気質（HSP）ゆえに、人からの評価や期待に振り回されてきた過去があります。
-        子育てへの不安や自信のなさに悩んだ時期を経て気づいたのは、"自分の声"にこそ本当の答えがあるということ。
-        だからこそ、同じように悩む方の"心の声"に寄り添い、その人らしい輝きを引き出すお手伝いをしたいと思っています。
-      </p>
+      <div class="story-top">
+        <div class="story-photo">
+          <img src="../images/counseling-session.jpg" alt="セッションの様子（イメージ）" loading="lazy">
+        </div>
+        <p class="story-intro">
+          実は私自身、繊細な気質（HSP）ゆえに、人からの評価や期待に振り回されてきた過去があります。
+          子育てへの不安や自信のなさに悩んだ時期を経て気づいたのは、"自分の声"にこそ本当の答えがあるということ。
+          だからこそ、同じように悩む方の"心の声"に寄り添い、その人らしい輝きを引き出すお手伝いをしたいと思っています。
+        </p>
+      </div>
 
       <div class="timeline">
         <div class="tl-item">
@@ -534,6 +557,9 @@
       <p class="section-lead">声の周波数には、言葉以上に多くの"その人らしさ"が現れます。<br class="br-pc">声解析は、その周波数から強み・課題・魅力を可視化する手法です。</p>
       <div class="divider"></div>
     </div>
+    <div class="voice-photo reveal">
+      <img src="../images/voice-analysis-demo.jpg" alt="声解析結果の画面を見ながら説明する様子" loading="lazy">
+    </div>
     <div class="voice-grid reveal">
       <div class="voice-card">
         <p class="voice-num">01</p>
@@ -565,7 +591,7 @@
     <div class="persona-grid reveal">
       <div class="persona-card">
         <div class="persona-head">
-          <div class="persona-avatar">A</div>
+          <div class="persona-avatar"><svg viewBox="0 0 24 24"><path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"/></svg></div>
           <div>
             <span class="persona-tag">30代女性</span>
             <p class="persona-catch">仕事も子育ても頑張っているのに、<br class="br-pc">なぜか自信が持てない方へ</p>
@@ -599,7 +625,7 @@
 
       <div class="persona-card">
         <div class="persona-head">
-          <div class="persona-avatar">B</div>
+          <div class="persona-avatar"><svg viewBox="0 0 24 24"><path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"/></svg></div>
           <div>
             <span class="persona-tag">40代女性</span>
             <p class="persona-catch">長年「誰かのため」に頑張ってきた方が、<br class="br-pc">自分の人生を歩み出すために</p>
@@ -634,7 +660,7 @@
 
       <div class="persona-card">
         <div class="persona-head">
-          <div class="persona-avatar">C</div>
+          <div class="persona-avatar"><svg viewBox="0 0 24 24"><path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"/></svg></div>
           <div>
             <span class="persona-tag">50代男性</span>
             <p class="persona-catch">病気や体調の変化で声の自信を失った方、<br class="br-pc">完璧主義で頑張りすぎるリーダーへ</p>
