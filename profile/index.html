@@ -285,32 +285,64 @@
   .plan-cta{margin-top:20px;}
   .plan-cta .btn{width:100%;justify-content:center;padding:13px;font-size:13px;}
 
-  .persona-grid{display:grid;grid-template-columns:1fr;gap:22px;max-width:1000px;margin:0 auto;}
-  @media(min-width:860px){ .persona-grid{grid-template-columns:repeat(3,1fr);} }
+  .persona-grid{display:grid;grid-template-columns:1fr;gap:26px;max-width:1000px;margin:0 auto;}
+  @media(min-width:860px){ .persona-grid{grid-template-columns:repeat(3,1fr);align-items:start;} }
   .persona-card{
     background:#fff;border:1px solid var(--rose-pale);border-radius:24px;
-    padding:30px 26px;box-shadow:0 18px 38px -24px rgba(139,90,104,.28);
+    padding:28px 24px;box-shadow:0 18px 38px -24px rgba(139,90,104,.28);
+  }
+  .persona-head{display:flex;align-items:center;gap:12px;}
+  .persona-avatar{
+    width:46px;height:46px;border-radius:50%;flex-shrink:0;
+    background:linear-gradient(160deg,var(--rose-pale),var(--blush));
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Noto Serif JP",serif;font-weight:700;color:var(--plum-deep);font-size:15px;
   }
   .persona-tag{
     display:inline-block;background:var(--plum-deep);color:var(--gold-light);
-    font-size:12px;font-weight:700;letter-spacing:.08em;padding:6px 16px;border-radius:999px;
+    font-size:11.5px;font-weight:700;letter-spacing:.06em;padding:5px 14px;border-radius:999px;
   }
-  .persona-sub{margin-top:18px;font-size:11.5px;color:var(--gold);font-weight:700;letter-spacing:.1em;}
-  .persona-list{margin-top:10px;list-style:none;}
-  .persona-list li{
-    position:relative;padding-left:16px;margin-bottom:8px;font-size:12.5px;color:var(--ink-soft);line-height:1.8;
+  .persona-catch{
+    margin-top:6px;font-family:"Noto Serif JP",serif;font-weight:700;
+    font-size:14.5px;color:var(--plum-deep);line-height:1.55;
   }
-  .persona-list li::before{content:"・";position:absolute;left:0;color:var(--gold);}
-  .persona-divider{margin:20px 0;height:1px;background:var(--rose-pale);}
+  .ba-block{margin-top:18px;border-radius:16px;padding:16px 18px;}
+  .ba-block.is-before{background:#F7EFED;}
+  .ba-block.is-after{background:var(--cream-deep);margin-top:12px;}
+  .ba-label{
+    display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  .ba-block.is-after .ba-label{color:var(--plum);}
+  .ba-list{margin-top:10px;list-style:none;}
+  .ba-list li{
+    position:relative;padding-left:20px;margin-bottom:7px;font-size:12.5px;color:var(--ink-soft);line-height:1.75;
+  }
+  .ba-list.is-before li::before{content:"–";position:absolute;left:2px;color:#C9A0A6;font-weight:700;}
+  .ba-list.is-after li{color:var(--ink);}
+  .ba-list.is-after li::before{content:"✓";position:absolute;left:0;top:1px;color:var(--gold);font-weight:700;font-size:11px;}
+
   .persona-voice{
-    margin-top:22px;padding:18px 20px;background:var(--cream-deep);
-    border-radius:16px;border:1px solid var(--rose-pale);
+    position:relative;margin-top:20px;padding:22px 20px 18px;
+    background:linear-gradient(165deg,var(--cream-deep),var(--blush));
+    border-radius:18px;border:1px solid var(--rose-pale);overflow:hidden;
   }
-  .persona-voice-stars{color:var(--gold);font-size:13px;letter-spacing:2px;}
+  .persona-voice-mark{
+    position:absolute;top:-6px;left:14px;font-family:"Cormorant Garamond",serif;
+    font-size:56px;color:var(--gold-light);opacity:.8;line-height:1;
+  }
+  .persona-voice-stars{position:relative;color:var(--gold);font-size:14px;letter-spacing:3px;}
   .persona-voice-quote{
-    margin-top:8px;font-size:12.5px;color:var(--ink);line-height:1.85;
+    position:relative;margin-top:10px;font-size:13px;color:var(--ink);line-height:1.95;
   }
-  .persona-voice-label{margin-top:10px;font-size:11px;color:var(--ink-soft);letter-spacing:.04em;}
+  .persona-voice-foot{
+    position:relative;margin-top:16px;padding-top:14px;border-top:1px solid rgba(139,90,104,.14);
+    font-size:11.5px;color:var(--ink-soft);letter-spacing:.03em;
+  }
+  .persona-voice-foot b{color:var(--plum-deep);font-weight:700;}
+  .persona-voice-example{
+    position:relative;margin-top:10px;font-size:10.5px;color:var(--ink-soft);opacity:.85;
+  }
 
   /* ---------- achievements ---------- */
   .ach-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:760px;margin:0 auto;}
@@ -532,69 +564,105 @@
 
     <div class="persona-grid reveal">
       <div class="persona-card">
-        <span class="persona-tag">30代女性</span>
-        <p class="persona-sub">どんな人にいいのか</p>
-        <ul class="persona-list">
-          <li>仕事と子育て・家庭の両立に追われ、頑張っているのに何かが足りないと感じる方</li>
-          <li>会議やプレゼン、面接などで緊張すると声が震えてしまう方</li>
-          <li>資格やセミナーに手を出しても続かず、自分に自信が持てない方</li>
-          <li>「本当にやりたいこと」がわからず、モヤモヤを抱えている方</li>
-        </ul>
-        <div class="persona-divider"></div>
-        <p class="persona-sub">どのように変われるか</p>
-        <ul class="persona-list">
-          <li>緊張で震えていた声が、自信を持って堂々と話せる声に変わっていく</li>
-          <li>面接やプレゼンで自分の言葉が"伝わる"実感を得られる</li>
-          <li>「人の気持ちに寄り添う力」など、気づいていなかった自分の強みに出会える</li>
-          <li>家庭でも心に余裕が生まれ、周囲から「変わったね」と言われるようになる</li>
-        </ul>
+        <div class="persona-head">
+          <div class="persona-avatar">A</div>
+          <div>
+            <span class="persona-tag">30代女性</span>
+            <p class="persona-catch">仕事も子育ても頑張っているのに、<br class="br-pc">なぜか自信が持てない方へ</p>
+          </div>
+        </div>
+
+        <div class="ba-block is-before">
+          <span class="ba-label">Before ｜ こんなお悩み</span>
+          <ul class="ba-list is-before">
+            <li>仕事と子育ての両立に追われ、心に余裕がない</li>
+            <li>面接やプレゼンで緊張すると声が震えてしまう</li>
+            <li>「本当にやりたいこと」がわからずモヤモヤする</li>
+          </ul>
+        </div>
+        <div class="ba-block is-after">
+          <span class="ba-label">After ｜ 声解析後の変化</span>
+          <ul class="ba-list is-after">
+            <li>自信を持って堂々と話せるようになる</li>
+            <li>面接やプレゼンで自分の言葉が"伝わる"実感が持てる</li>
+            <li>気づいていなかった自分の強みに出会える</li>
+          </ul>
+        </div>
+
         <div class="persona-voice">
+          <p class="persona-voice-mark">"</p>
           <p class="persona-voice-stars">★★★★★</p>
-          <p class="persona-voice-quote">緊張すると声が震えてしまい、二次面接でうまく伝えられるか不安でした。自信が持てる声に整えていただいたことで、緊張せず自己紹介もプレゼンもできるように。無事に採用され、収入も1.5倍になりました。</p>
-          <p class="persona-voice-label">お客様の声 ／ 30代女性</p>
+          <p class="persona-voice-quote">緊張すると声が震えてしまい、二次面接が本当に不安でした。でも自分の"声"に自信が持てるようになってから、自己紹介もプレゼンも堂々と話せるように。結果、無事に採用が決まり、収入も1.5倍になったんです。声を変えただけで、こんなに人生が変わるなんて思っていませんでした。</p>
+          <p class="persona-voice-foot"><b>30代女性・会社員</b>／ 個別セッションご利用</p>
         </div>
       </div>
 
       <div class="persona-card">
-        <span class="persona-tag">40代女性</span>
-        <p class="persona-sub">どんな人にいいのか</p>
-        <ul class="persona-list">
-          <li>子育てや仕事が少し落ち着き、これからの自分の人生を考え始めている方</li>
-          <li>長年「誰かのため」に頑張ってきて、本音を後回しにしてきた方</li>
-          <li>人前で話す機会が増えたのに、声や話し方に自信が持てない方</li>
-          <li>これまでの経験やスキルを、どう活かせばいいかわからない方</li>
-        </ul>
-        <div class="persona-divider"></div>
-        <p class="persona-sub">どのように変われるか</p>
-        <ul class="persona-list">
-          <li>我慢していた本音を、自然な言葉と声で伝えられるようになる</li>
-          <li>これまでのキャリアの中に眠っていた強み・才能に気づける</li>
-          <li>声から自分の心の状態を客観視でき、感情に振り回されにくくなる</li>
-          <li>相談員・講師・コンサルなど、人と接する新しい一歩を踏み出す自信がつく</li>
-        </ul>
+        <div class="persona-head">
+          <div class="persona-avatar">B</div>
+          <div>
+            <span class="persona-tag">40代女性</span>
+            <p class="persona-catch">長年「誰かのため」に頑張ってきた方が、<br class="br-pc">自分の人生を歩み出すために</p>
+          </div>
+        </div>
+
+        <div class="ba-block is-before">
+          <span class="ba-label">Before ｜ こんなお悩み</span>
+          <ul class="ba-list is-before">
+            <li>これからの人生をどう生きたいか、漠然とした不安がある</li>
+            <li>長年「誰かのため」に頑張り、本音を後回しにしてきた</li>
+            <li>経験はあるのに、どう活かせばいいかわからない</li>
+          </ul>
+        </div>
+        <div class="ba-block is-after">
+          <span class="ba-label">After ｜ 声解析後の変化</span>
+          <ul class="ba-list is-after">
+            <li>我慢していた本音を、自然な言葉で伝えられるようになる</li>
+            <li>キャリアの中に眠っていた強み・才能に気づける</li>
+            <li>感情に振り回されにくくなり、心が安定する</li>
+          </ul>
+        </div>
+
+        <div class="persona-voice">
+          <p class="persona-voice-mark">"</p>
+          <p class="persona-voice-stars">★★★★★</p>
+          <p class="persona-voice-quote">子育てが少し落ち着いた頃、"この先の私はどうしたいんだろう"とずっとモヤモヤしていました。声解析を受けて驚いたのは、自分でも気づいていなかった"本当の気持ち"がちゃんと声に表れていたこと。今は我慢せず自分の言葉で話せるようになり、新しいことに挑戦する勇気が持てるようになりました。</p>
+          <p class="persona-voice-foot"><b>40代女性・パート勤務</b>／ 個別セッションご利用</p>
+          <p class="persona-voice-example">※ お客様の傾向をもとに構成した参考例です</p>
+        </div>
       </div>
 
       <div class="persona-card">
-        <span class="persona-tag">50代男性</span>
-        <p class="persona-sub">どんな人にいいのか</p>
-        <ul class="persona-list">
-          <li>病気や体調の変化をきっかけに、自分の声や話し方に自信を失ってしまった方</li>
-          <li>完璧主義で、知らず知らずのうちにストレスを抱え込みやすい経営者・管理職の方</li>
-          <li>人前で話す機会は多いのに、以前のような自然な声が出せないと感じる方</li>
-          <li>部下やチームに、自分の想いをもっとしっかり伝えたいリーダーの方</li>
-        </ul>
-        <div class="persona-divider"></div>
-        <p class="persona-sub">どのように変われるか</p>
-        <ul class="persona-list">
-          <li>数回のセッションを重ねる中で、声の波形が変化し自然な声が出るようになる</li>
-          <li>ストレスを抱えやすかった思考のクセに気づき、前向きに考えられるようになる</li>
-          <li>「声だけでなく心まで変わった」と感じられるようになる</li>
-          <li>人前でのスピーチや講演で、以前より説得力と信頼感を持って話せるようになる</li>
-        </ul>
+        <div class="persona-head">
+          <div class="persona-avatar">C</div>
+          <div>
+            <span class="persona-tag">50代男性</span>
+            <p class="persona-catch">病気や体調の変化で声の自信を失った方、<br class="br-pc">完璧主義で頑張りすぎるリーダーへ</p>
+          </div>
+        </div>
+
+        <div class="ba-block is-before">
+          <span class="ba-label">Before ｜ こんなお悩み</span>
+          <ul class="ba-list is-before">
+            <li>病気や体調の変化で、声や話し方に自信を失った</li>
+            <li>完璧主義で、知らず知らずストレスを溜め込みやすい</li>
+            <li>人前で話す機会は多いが、以前のような自然な声が出ない</li>
+          </ul>
+        </div>
+        <div class="ba-block is-after">
+          <span class="ba-label">After ｜ 声解析後の変化</span>
+          <ul class="ba-list is-after">
+            <li>セッションを重ねる中で、自然な声が戻ってくる</li>
+            <li>ストレスを抱えやすい思考のクセに気づき、前向きになれる</li>
+            <li>声だけでなく、心まで変わったと実感できる</li>
+          </ul>
+        </div>
+
         <div class="persona-voice">
+          <p class="persona-voice-mark">"</p>
           <p class="persona-voice-stars">★★★★★</p>
-          <p class="persona-voice-quote">病気をしてから、自分の声に自信がなくなってしまいました。8回のサポートで少しずつ声の波形が変化し、以前より自然に声が出るように。完璧主義でストレスを抱えやすかった私ですが、前向きに考えられるようになりました。声だけでなく、心まで変わったと感じています。</p>
-          <p class="persona-voice-label">お客様の声 ／ 50代・経営者</p>
+          <p class="persona-voice-quote">病気をしてから、自分の声に自信がなくなってしまいました。8回のサポートを重ねる中で、少しずつ声の波形が変化し、以前より自然に声が出るようになったんです。完璧主義でストレスを抱えやすかった私ですが、前向きに考えられるようになりました。声だけでなく、心まで変わったと感じています。</p>
+          <p class="persona-voice-foot"><b>50代男性・経営者</b>／ 継続セッションご利用</p>
         </div>
       </div>
     </div>
