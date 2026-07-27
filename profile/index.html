@@ -58,7 +58,7 @@
   .nav.scrolled{box-shadow:0 4px 24px rgba(139,90,104,.10);}
   .nav-inner{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;}
   .nav-logo{font-family:"Noto Serif JP",serif;font-weight:700;font-size:17px;color:var(--plum-deep);letter-spacing:.04em;}
-  .nav-links{display:none;gap:30px;font-size:13.5px;letter-spacing:.03em;color:var(--ink-soft);}
+  .nav-links{display:none;gap:22px;font-size:13px;letter-spacing:.02em;color:var(--ink-soft);white-space:nowrap;}
   .nav-links a:hover{color:var(--plum);}
   .nav-cta{
     display:inline-flex;align-items:center;gap:6px;
@@ -146,7 +146,7 @@
   }
 
   /* ---------- section shared ---------- */
-  #about, #voice, #for-you, #service, #achievements, #connect{scroll-margin-top:76px;}
+  #about, #voice, #for-you, #flow, #service, #faq, #achievements, #press, #connect{scroll-margin-top:76px;}
   .section{padding:88px 24px;}
   .section-tight{padding:64px 24px;}
   .section-head{text-align:center;max-width:640px;margin:0 auto 52px;}
@@ -364,6 +364,66 @@
   }
   .persona-voice-foot b{color:var(--plum-deep);font-weight:700;}
 
+  /* ---------- flow ---------- */
+  .flow-grid{
+    display:grid;grid-template-columns:1fr;gap:0;max-width:1000px;margin:0 auto;
+    counter-reset:flow;
+  }
+  @media(min-width:860px){ .flow-grid{grid-template-columns:repeat(4,1fr);} }
+  .flow-step{position:relative;padding:0 18px 40px;text-align:center;}
+  @media(min-width:860px){ .flow-step{padding:0 14px 0;} }
+  .flow-step::before{
+    content:"";position:absolute;left:50%;top:64px;bottom:0;width:2px;
+    background:var(--rose-pale);transform:translateX(-50%);
+  }
+  .flow-step:last-child::before{display:none;}
+  @media(min-width:860px){
+    .flow-step::before{left:calc(50% + 32px);right:-14px;top:32px;bottom:auto;width:auto;height:2px;}
+  }
+  .flow-num{
+    position:relative;z-index:1;width:64px;height:64px;margin:0 auto;border-radius:50%;
+    background:linear-gradient(160deg,var(--plum),var(--plum-soft));color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;
+    box-shadow:0 14px 26px -12px var(--shadow-soft);
+  }
+  .flow-step h3{
+    margin-top:18px;font-family:"Noto Serif JP",serif;font-weight:700;font-size:15.5px;color:var(--plum-deep);
+  }
+  .flow-step p{margin-top:8px;font-size:12.5px;color:var(--ink-soft);line-height:1.85;}
+
+  /* ---------- faq ---------- */
+  .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
+  .faq-item{
+    background:#fff;border:1px solid var(--rose-pale);border-radius:18px;
+    padding:6px 24px;box-shadow:0 10px 26px -18px rgba(139,90,104,.24);
+  }
+  .faq-item summary{
+    padding:18px 30px 18px 0;position:relative;cursor:pointer;list-style:none;
+    font-family:"Noto Serif JP",serif;font-weight:700;font-size:14.5px;color:var(--plum-deep);
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::before{content:"Q";color:var(--gold);font-family:"Cormorant Garamond",serif;font-weight:700;margin-right:10px;}
+  .faq-item summary::after{
+    content:"+";position:absolute;right:2px;top:16px;font-size:20px;color:var(--plum-soft);
+    transition:transform .25s;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{padding:0 0 20px 22px;font-size:13px;color:var(--ink-soft);line-height:1.9;}
+
+  /* ---------- press ---------- */
+  .press-card{
+    max-width:820px;margin:0 auto;background:#fff;border-radius:28px;
+    padding:44px 36px;text-align:center;border:1px solid var(--rose-pale);
+    box-shadow:0 30px 60px -32px rgba(139,90,104,.3);
+  }
+  .press-bio{
+    margin:22px auto 0;max-width:640px;padding:24px 26px;background:var(--cream-deep);
+    border-radius:16px;font-size:13px;color:var(--ink-soft);line-height:2;text-align:left;
+    border:1px solid var(--rose-pale);
+  }
+  .press-note{margin-top:22px;font-size:13px;color:var(--ink-soft);line-height:1.95;}
+
   /* ---------- achievements ---------- */
   .ach-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:760px;margin:0 auto;}
   @media(min-width:640px){ .ach-grid{grid-template-columns:1fr 1fr;} }
@@ -428,6 +488,7 @@
         <a href="#for-you">こんな方に</a>
         <a href="#service">Service</a>
         <a href="#achievements">実績</a>
+        <a href="#press">メディア</a>
         <a href="#connect">Contact</a>
       </div>
       <a class="nav-cta" href="https://lin.ee/X1DwyEg" target="_blank" rel="noopener">LINE相談</a>
@@ -713,6 +774,38 @@
     </div>
   </section>
 
+  <!-- Flow -->
+  <section class="section" id="flow" style="background:var(--cream-deep);">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">Flow</p>
+      <h2 class="section-title">ご相談の流れ</h2>
+      <p class="section-lead">お申し込みからセッションまで、迷わず進めるようにご案内します。</p>
+      <div class="divider"></div>
+    </div>
+    <div class="flow-grid reveal">
+      <div class="flow-step">
+        <div class="flow-num">01</div>
+        <h3>LINE公式に登録</h3>
+        <p>下記ボタンからLINE公式アカウントを友だち登録してください。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">02</div>
+        <h3>日程を調整</h3>
+        <p>LINE上で、ご希望の日時をご相談いただきます。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">03</div>
+        <h3>声解析セッション</h3>
+        <p>オンラインで、あなたの声を解析しながらお話しします。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">04</div>
+        <h3>フィードバック</h3>
+        <p>結果をもとに、これからの一歩をご提案します。</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Service -->
   <section class="section service-wrap" id="service">
     <div class="section-head reveal">
@@ -775,6 +868,37 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">FAQ</p>
+      <h2 class="section-title">よくあるご質問</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>オンラインでも受けられますか？</summary>
+        <p>はい。Zoomなどを使用したオンラインセッションに対応しております。全国どちらからでもご参加いただけます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>声解析セッションは初めてでも大丈夫ですか？</summary>
+        <p>もちろんです。ほとんどの方が初めてのご利用です。丁寧にご説明しながら進めますので、安心してご参加ください。</p>
+      </details>
+      <details class="faq-item">
+        <summary>どのくらいで変化を感じられますか？</summary>
+        <p>個人差はありますが、多くの方が数回のセッションからご自身の声や心の変化を実感されています。まずは初回の特別個別セッションでお試しください。</p>
+      </details>
+      <details class="faq-item">
+        <summary>相談内容の秘密は守られますか？</summary>
+        <p>はい。セッションで伺った内容は守秘義務のもと厳重に管理し、第三者に開示することはございません。安心してご相談ください。</p>
+      </details>
+      <details class="faq-item">
+        <summary>日程の変更やキャンセルはできますか？</summary>
+        <p>可能です。LINE公式アカウントより、お気軽にご相談ください。</p>
+      </details>
+    </div>
+  </section>
+
   <!-- Achievements -->
   <section class="section" id="achievements">
     <div class="section-head reveal">
@@ -793,8 +917,29 @@
     </div>
   </section>
 
+  <!-- Press -->
+  <section class="section" id="press" style="background:var(--cream-deep);">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">For Media</p>
+      <h2 class="section-title">メディア掲載・取材について</h2>
+      <p class="section-lead">講演会・ラジオ・イベントなど、声と表現力を活かした活動を行っています。<br class="br-pc">取材・記事掲載・出演のご相談は、お気軽にお問い合わせください。</p>
+      <div class="divider"></div>
+    </div>
+    <div class="press-card reveal">
+      <span class="service-tag" style="background:rgba(139,90,104,.08);color:var(--plum);">PROFILE FOR PRESS</span>
+      <p class="press-bio">
+        中川真樹子（なかがわ・まきこ）｜声解析士マスターインストラクター・声ブランディング専門家<br><br>
+        声の周波数から"心の声"を可視化する声解析を軸に、カウンセリング・コーチング・各種講座を展開。EQ絵本講師®、心理カウンセラー、NLP、HSPカウンセラーなどの知見を活かし、"言葉と声で自然に選ばれる人"を育てるお手伝いをしている。講演会・コンベンション司会・ラジオ出演・イベント企画など、声と表現力を活かした活動多数。
+      </p>
+      <p class="press-note">プロフィール写真・経歴資料もご用意しております。取材・メディア掲載のご相談は、下記よりお気軽にご連絡ください。</p>
+      <div class="service-cta">
+        <a class="btn btn-line" href="https://lin.ee/X1DwyEg" target="_blank" rel="noopener">取材・お問い合わせはこちら</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Connect -->
-  <section class="section" id="connect" style="background:var(--cream-deep);">
+  <section class="section" id="connect">
     <div class="section-head reveal">
       <p class="section-eyebrow">Connect</p>
       <h2 class="section-title">SNS・リンク</h2>
