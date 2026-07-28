@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ehonnakagawa-lang.github.io/ideal-barnacle/sitemap.xml
