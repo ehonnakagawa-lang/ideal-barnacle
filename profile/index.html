@@ -173,7 +173,7 @@
   }
 
   /* ---------- section shared ---------- */
-  #about, #voice, #for-you, #flow, #service, #faq, #achievements, #press, #connect{scroll-margin-top:76px;}
+  #about, #voice, #check, #for-you, #flow, #service, #faq, #achievements, #press, #connect{scroll-margin-top:76px;}
   .section{padding:88px 24px;}
   .section-tight{padding:64px 24px;}
   .section-head{text-align:center;max-width:640px;margin:0 auto 52px;}
@@ -391,6 +391,46 @@
   }
   .persona-voice-foot b{color:var(--plum-deep);font-weight:700;}
 
+  /* ---------- self check ---------- */
+  .check-card{
+    max-width:720px;margin:0 auto;background:#fff;border-radius:28px;
+    padding:36px 30px;border:1px solid var(--rose-pale);
+    box-shadow:0 30px 60px -32px rgba(139,90,104,.3);
+  }
+  .check-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+  .check-item{padding:6px 12px;border-radius:14px;transition:background .2s;}
+  .check-item:hover{background:var(--cream-deep);}
+  .check-item label{display:flex;align-items:flex-start;gap:14px;width:100%;padding:8px 0;cursor:pointer;}
+  .check-item input{
+    appearance:none;flex-shrink:0;width:22px;height:22px;margin-top:1px;border-radius:7px;
+    border:1.5px solid var(--plum-soft);cursor:pointer;position:relative;transition:background .2s,border-color .2s;
+  }
+  .check-item input:checked{background:var(--plum);border-color:var(--plum);}
+  .check-item input:checked::after{
+    content:"";position:absolute;left:6px;top:2px;width:6px;height:11px;
+    border:solid #fff;border-width:0 2px 2px 0;transform:rotate(40deg);
+  }
+  .check-item span{font-size:13.5px;color:var(--ink);line-height:1.7;}
+  .check-submit{margin-top:28px;text-align:center;}
+  .check-submit .btn{width:100%;justify-content:center;}
+  @media(min-width:480px){ .check-submit .btn{width:auto;padding:16px 48px;} }
+  .check-hint{margin-top:12px;text-align:center;font-size:11.5px;color:var(--ink-soft);}
+
+  .check-result{
+    max-width:720px;margin:24px auto 0;background:linear-gradient(165deg,var(--cream-deep),var(--blush));
+    border-radius:28px;padding:40px 32px;text-align:center;border:1px solid var(--rose-pale);
+    display:none;
+  }
+  .check-result.show{display:block;}
+  .check-result-score{font-family:"Cormorant Garamond",serif;font-size:15px;letter-spacing:.14em;color:var(--gold);}
+  .check-result-score b{font-size:28px;color:var(--plum-deep);font-weight:700;}
+  .check-result-title{
+    margin-top:12px;font-family:"Noto Serif JP",serif;font-weight:900;
+    font-size:clamp(19px,3.2vw,24px);color:var(--plum-deep);line-height:1.6;
+  }
+  .check-result-body{margin:16px auto 0;max-width:520px;font-size:13.5px;color:var(--ink-soft);line-height:1.95;}
+  .check-result .btn{margin-top:26px;}
+
   /* ---------- flow ---------- */
   .flow-grid{
     display:grid;grid-template-columns:1fr;gap:0;max-width:1000px;margin:0 auto;
@@ -512,6 +552,7 @@
       <div class="nav-links">
         <a href="#about">Profile</a>
         <a href="#voice">声解析とは</a>
+        <a href="#check">セルフチェック</a>
         <a href="#for-you">こんな方に</a>
         <a href="#service">Service</a>
         <a href="#achievements">実績</a>
@@ -666,6 +707,44 @@
         <h3>自己肯定感を育む</h3>
         <p>EQ絵本、マヤ暦、心理学の知見を組み合わせ、あなたらしく輝くための土台となる自己肯定感を育みます。</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Self Check -->
+  <section class="section" id="check">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">Self Check</p>
+      <h2 class="section-title">声・自己肯定感 セルフチェック</h2>
+      <p class="section-lead">当てはまるものに、気軽にチェックしてみてください。<br class="br-pc">あなたの"声"のクセや、心の状態が見えてくるかもしれません。</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="check-card reveal">
+      <ul class="check-list" id="checkList">
+        <li class="check-item"><label><input type="checkbox"><span>人前で話すと、声が震えたり早口になったりする</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>自分の意見より、周りの意見を優先してしまう</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>電話や面接など、声だけで判断される場面が苦手</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>「本当はこう思っている」と、言葉にできないことが多い</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>人からどう思われているか、常に気になってしまう</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>大事な場面ほど、緊張して声が小さくなる</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>頑張っているのに、なかなか自分に自信が持てない</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>感情を抑え込んで、後から疲れてしまうことがある</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>「話し方・声を変えたい」と思ったことがある</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>自分が本当は何をしたいのか、わからなくなることがある</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>人間関係のストレスで、体調に影響が出ることがある</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>このままでいいのか、漠然とした不安がある</span></label></li>
+      </ul>
+      <div class="check-submit">
+        <button type="button" class="btn btn-line" id="checkSubmit">セルフチェック結果を見る</button>
+      </div>
+      <p class="check-hint">※ 医学的な診断ではありません。ご自身の傾向を知るための簡易チェックです。</p>
+    </div>
+
+    <div class="check-result" id="checkResult">
+      <p class="check-result-score">CHECKED <b id="checkScore">0</b> / 12</p>
+      <h3 class="check-result-title" id="checkTitle"></h3>
+      <p class="check-result-body" id="checkBody"></p>
+      <a class="btn btn-line" href="https://lin.ee/X1DwyEg" target="_blank" rel="noopener">LINE公式で無料相談を予約する</a>
     </div>
   </section>
 
@@ -1021,6 +1100,32 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // self check
+  const checkSubmit = document.getElementById('checkSubmit');
+  if (checkSubmit) {
+    checkSubmit.addEventListener('click', () => {
+      const total = document.querySelectorAll('#checkList input[type="checkbox"]').length;
+      const checked = document.querySelectorAll('#checkList input[type="checkbox"]:checked').length;
+      const result = document.getElementById('checkResult');
+      const title = document.getElementById('checkTitle');
+      const body = document.getElementById('checkBody');
+      document.getElementById('checkScore').textContent = checked;
+
+      if (checked <= 3) {
+        title.textContent = 'あなたの声は、今のあなたをしっかり表現できています';
+        body.textContent = '大きな無理はしていない状態のようです。とはいえ、声にはまだ気づいていない魅力や強みが眠っていることも。声解析で、さらに"あなたらしさ"を引き出してみませんか。';
+      } else if (checked <= 7) {
+        title.textContent = 'あなたの声には、まだ気づいていない可能性が眠っています';
+        body.textContent = '頑張っている分、少し無理をしているサインが出ているかもしれません。声解析で心の声を可視化すると、今まで気づかなかった強みや、伝え方のヒントが見えてきます。';
+      } else {
+        title.textContent = 'あなたの"声"が、本当のあなたを抑え込んでいるかもしれません';
+        body.textContent = 'かなり頑張り続けてきた状態のサインです。一人で抱え込まず、声解析を通じて、あなたの"心の声"に一緒に耳を傾けてみませんか。まずは無料の個別セッションからお試しください。';
+      }
+      result.classList.add('show');
+      result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
 </script>
 </body>
 </html>
