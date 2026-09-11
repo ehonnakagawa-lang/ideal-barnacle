@@ -160,6 +160,18 @@
     letter-spacing:.04em;line-height:2;
   }
   @media(min-width:900px){ .hero-sub{max-width:560px;} }
+  .discipline-tags{
+    margin-top:20px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 12px;
+    font-family:"Cormorant Garamond",serif;font-style:italic;font-size:14.5px;
+    color:var(--plum);letter-spacing:.02em;
+  }
+  .discipline-tags span:not(.sep){font-weight:600;}
+  .discipline-tags .sep{color:var(--gold);font-style:normal;}
+  @media(min-width:900px){ .discipline-tags{justify-content:flex-start;} }
+  .reach-line{
+    margin-top:14px;font-size:11.5px;color:var(--ink-soft);letter-spacing:.06em;
+  }
+  @media(min-width:900px){ .reach-line{text-align:left;} }
   .hero-badges{
     margin-top:26px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;
   }
@@ -200,6 +212,30 @@
     background:linear-gradient(90deg,var(--gold),var(--plum-soft));
   }
 
+  /* ---------- path selector ---------- */
+  .path-band{padding:40px 24px;background:#fff;border-bottom:1px solid var(--rose-pale);}
+  .path-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:820px;margin:0 auto;}
+  @media(min-width:640px){ .path-grid{grid-template-columns:1fr 1fr;} }
+  .path-card{
+    display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;
+    padding:22px 20px;border-radius:20px;border:1.5px solid var(--rose-pale);
+    transition:border-color .2s,background .2s,transform .2s;
+  }
+  .path-card:hover{border-color:var(--plum-soft);background:var(--cream-deep);transform:translateY(-2px);}
+  .path-card .path-eyebrow{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:12px;color:var(--gold);letter-spacing:.1em;}
+  .path-card .path-name{margin-top:4px;font-family:"Noto Serif JP",serif;font-weight:700;font-size:16px;color:var(--plum-deep);}
+  .path-card .path-arrow{margin-top:6px;font-size:12px;color:var(--plum-soft);}
+
+  /* ---------- moya hook ---------- */
+  .moya-list{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:0;}
+  .moya-item{
+    display:flex;align-items:baseline;gap:18px;padding:18px 4px;border-bottom:1px solid var(--rose-pale);
+  }
+  .moya-item:last-child{border-bottom:none;}
+  .moya-num{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:15px;color:var(--gold);flex-shrink:0;}
+  .moya-item span:last-child{font-size:13.5px;color:var(--ink);line-height:1.75;}
+  .moya-foot{margin:28px auto 0;max-width:520px;text-align:center;font-family:"Noto Serif JP",serif;font-weight:700;font-size:14.5px;color:var(--plum-deep);line-height:1.9;}
+
   /* ---------- message ---------- */
   .message{
     position:relative;overflow:hidden;text-align:center;padding:90px 24px;
@@ -231,7 +267,7 @@
   .story{max-width:900px;margin:0 auto;}
   .story-top{display:flex;flex-direction:column-reverse;gap:30px;align-items:center;margin-bottom:50px;}
   .story-photo{
-    width:100%;max-width:380px;border-radius:26px;overflow:hidden;flex-shrink:0;
+    width:100%;max-width:380px;border-radius:180px 180px 26px 26px;overflow:hidden;flex-shrink:0;
     box-shadow:0 26px 54px -28px rgba(139,90,104,.35);border:1px solid var(--rose-pale);
   }
   .story-photo img{width:100%;height:auto;display:block;}
@@ -606,6 +642,10 @@
           声解析士マスターインストラクターとして、声の周波数に映る"心の声"を読み解き、<br class="br-pc">
           あなたらしい魅力とブランディングを引き出すお手伝いをしています。
         </p>
+        <p class="discipline-tags">
+          <span>講演・研修</span><span class="sep">×</span><span>声解析</span><span class="sep">×</span><span>心理学</span><span class="sep">×</span><span>コーチング</span>
+        </p>
+        <p class="reach-line">企業・教育機関・団体様のご依頼にも対応｜福岡・全国オンライン対応</p>
         <div class="hero-badges">
           <span class="badge-pill">声解析士マスターインストラクター</span>
           <span class="badge-pill">心理カウンセラー</span>
@@ -624,6 +664,22 @@
     <div class="scroll-cue"></div>
   </header>
 
+  <!-- Path selector -->
+  <section class="path-band reveal">
+    <div class="path-grid">
+      <a class="path-card" href="#service">
+        <span class="path-eyebrow">Individual</span>
+        <span class="path-name">個人の方はこちら</span>
+        <span class="path-arrow">声解析セッション・個人セッションを見る →</span>
+      </a>
+      <a class="path-card" href="#corporate">
+        <span class="path-eyebrow">Business</span>
+        <span class="path-name">企業・団体の方はこちら</span>
+        <span class="path-arrow">講演・研修について見る →</span>
+      </a>
+    </div>
+  </section>
+
   <!-- Message -->
   <section class="message reveal">
     <p class="message-greeting">はじめまして、中川真樹子です。</p>
@@ -632,6 +688,22 @@
       声は、生まれ持った周波数の中に"心の声"を映し出しています。話し方や言葉の選び方ひとつで、伝わり方も、選ばれ方も変わっていく——。
       私は声解析を通じて、あなただけが持つ魅力と強みを可視化し、言葉と声で自然に選ばれるブランディングをサポートしています。
     </p>
+  </section>
+
+  <!-- Moya hook -->
+  <section class="section-tight" style="background:var(--cream-deep);">
+    <div class="section-head reveal" style="margin-bottom:36px;">
+      <p class="section-eyebrow">Does This Sound Like You?</p>
+      <h2 class="section-title">こんなモヤモヤを、<br class="br-mobile">ひとりで抱えていませんか？</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="moya-list reveal">
+      <div class="moya-item"><span class="moya-num">01</span><span>自分の強みや、本当にやりたいことが分からない</span></div>
+      <div class="moya-item"><span class="moya-num">02</span><span>周囲の期待を優先し、自分の本音を後回しにしてしまう</span></div>
+      <div class="moya-item"><span class="moya-num">03</span><span>人前で話すと緊張し、思うように伝えられない</span></div>
+      <div class="moya-item"><span class="moya-num">04</span><span>チームや家族との関係を、もっと良くしたい</span></div>
+    </div>
+    <p class="moya-foot reveal">答えは、外ではなく、<br class="br-mobile">あなたの中にあります。</p>
   </section>
 
   <!-- About / Story -->
