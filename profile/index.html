@@ -65,7 +65,9 @@
     color:var(--ink);
     line-height:1.85;
     -webkit-font-smoothing:antialiased;
+    padding-bottom:64px;
   }
+  @media(min-width:760px){ body{padding-bottom:0;} }
   img{max-width:100%;display:block;}
   a{color:inherit;text-decoration:none;}
   .accent-font{font-family:"Cormorant Garamond",serif;}
@@ -102,6 +104,16 @@
     box-shadow:0 4px 12px rgba(6,199,85,.28);
   }
   @media(min-width:760px){ .nav-links{display:flex;} }
+
+  /* ---------- mobile sticky cta ---------- */
+  .mobile-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:110;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:14px 24px;padding-bottom:calc(14px + env(safe-area-inset-bottom));
+    background:var(--line-green);color:#fff;font-size:14.5px;font-weight:700;
+    letter-spacing:.03em;box-shadow:0 -6px 20px rgba(6,199,85,.28);
+  }
+  @media(min-width:760px){ .mobile-cta{display:none;} }
 
   /* ---------- hero ---------- */
   .hero{
@@ -618,18 +630,20 @@
     <div class="nav-inner">
       <a href="#top" class="nav-logo">中川真樹子</a>
       <div class="nav-links">
-        <a href="#about">Profile</a>
         <a href="#voice">声解析とは</a>
-        <a href="#check">セルフチェック</a>
         <a href="#for-you">こんな方に</a>
         <a href="#service">Service</a>
         <a href="#achievements">実績</a>
         <a href="#press">メディア</a>
+        <a href="#check">セルフチェック</a>
+        <a href="#about">Profile</a>
         <a href="#connect">Contact</a>
       </div>
       <a class="nav-cta" href="https://lin.ee/X1DwyEg" target="_blank" rel="noopener">LINE相談</a>
     </div>
   </nav>
+
+  <a class="mobile-cta" href="https://lin.ee/X1DwyEg" target="_blank" rel="noopener">LINE公式で無料相談を予約する →</a>
 
   <!-- Hero -->
   <header class="hero" id="top">
@@ -706,86 +720,8 @@
     <p class="moya-foot reveal">答えは、外ではなく、<br class="br-mobile">あなたの中にあります。</p>
   </section>
 
-  <!-- About / Story -->
-  <section class="section" id="about">
-    <div class="section-head reveal">
-      <p class="section-eyebrow">Profile</p>
-      <h2 class="section-title">中川真樹子について</h2>
-      <div class="divider"></div>
-    </div>
-
-    <div class="story reveal">
-      <div class="story-top">
-        <div class="story-photo">
-          <img src="../images/counseling-session.jpg" alt="セッションの様子（イメージ）" loading="lazy">
-        </div>
-        <p class="story-intro">
-          実は私自身、繊細な気質（HSP）ゆえに、人からの評価や期待に振り回されてきた過去があります。
-          子育てへの不安や自信のなさに悩んだ時期を経て気づいたのは、"自分の声"にこそ本当の答えがあるということ。
-          だからこそ、同じように悩む方の"心の声"に寄り添い、その人らしい輝きを引き出すお手伝いをしたいと思っています。
-        </p>
-      </div>
-
-      <div class="timeline">
-        <div class="tl-item">
-          <p class="tl-year">2000</p>
-          <p class="tl-text">求人広告会社にてキャッチコピー・ライティング・営業スキルを磨く。<b>九州支社売上1位</b>、Web媒体九州エリア連続1位、本社表彰を受賞。</p>
-        </div>
-        <div class="tl-item">
-          <p class="tl-year">2004</p>
-          <p class="tl-text">物流コンサルティング会社にて営業課長を務め、人事・営業・新規事業に携わる。</p>
-        </div>
-        <div class="tl-item">
-          <p class="tl-year">2009</p>
-          <p class="tl-text">結婚を機に退社。子ども劇場の運営・事務局、保護者会会長を務める。</p>
-        </div>
-        <div class="tl-item">
-          <p class="tl-year">2019</p>
-          <p class="tl-text"><b>EQ絵本講師®</b>となり、講座をスタート。</p>
-        </div>
-        <div class="tl-item">
-          <p class="tl-year">2021</p>
-          <p class="tl-text"><b>マヤ暦アドバイザー</b>として活動を開始。</p>
-        </div>
-        <div class="tl-item">
-          <p class="tl-year">現在</p>
-          <p class="tl-text">
-            心理学・コーチングを学び資格取得講座を開催するかたわら、モデレーターやボイストレーニングにも携わる中で
-            「声解析」に出会う。現在は声の周波数からわかる"心の声"を読み解き、カウンセリング・コーチング・各種講座を展開。
-            AIスクールのエージェンシー活動やイベント企画にも力を注いでいる。
-          </p>
-        </div>
-      </div>
-
-      <div class="story-close">
-        言葉と声で自然に選ばれる声ブランディング専門家として——<br>
-        今日から、あなたの声とメンタルを整え、あなたらしい未来を一緒に育てていきましょう。
-      </div>
-    </div>
-  </section>
-
-  <!-- Credentials -->
-  <section class="section-tight reveal">
-    <div class="section-head" style="margin-bottom:36px;">
-      <p class="section-eyebrow">Qualification</p>
-      <h2 class="section-title">資格・肩書き</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="cred-grid">
-      <div class="cred-card">声解析士<br>マスターインストラクター</div>
-      <div class="cred-card">色彩心理</div>
-      <div class="cred-card">自己肯定感児童教育メソッド<br>英才教育コーチ</div>
-      <div class="cred-card">HSPカウンセラー</div>
-      <div class="cred-card">アドラー流<br>メンタルトレーナー</div>
-      <div class="cred-card">EQ絵本講師®<br>シニアインストラクター</div>
-      <div class="cred-card">マヤ暦アドバイザー</div>
-      <div class="cred-card">VLCコーチング</div>
-      <div class="cred-card">シャインコーチング</div>
-    </div>
-  </section>
-
   <!-- Voice explainer -->
-  <section class="section" id="voice" style="background:var(--cream-deep);">
+  <section class="section" id="voice">
     <div class="section-head reveal">
       <p class="section-eyebrow">About Voice Analysis</p>
       <h2 class="section-title">声解析とは</h2>
@@ -811,61 +747,6 @@
         <h3>自己肯定感を育む</h3>
         <p>EQ絵本、マヤ暦、心理学の知見を組み合わせ、あなたらしく輝くための土台となる自己肯定感を育みます。</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Voice Heart-Color Diagnosis -->
-  <section class="section" id="vtype">
-    <div class="section-head reveal">
-      <p class="section-eyebrow">Voice × 12 Heart Colors</p>
-      <h2 class="section-title">声の心色診断</h2>
-      <p class="section-lead">3つの質問に答えるだけ、約1分でわかる声の心色診断。<br class="br-pc">あなたの声に宿る12色の"心色"を見つけてみましょう。</p>
-      <div class="divider"></div>
-    </div>
-
-    <div class="diag-frame reveal">
-      <iframe src="https://ehonnakagawa-lang.github.io/kokoroiro-shindan/" title="声の心色診断" loading="lazy"></iframe>
-    </div>
-    <p class="diag-fallback">
-      <a href="https://ehonnakagawa-lang.github.io/kokoroiro-shindan/" target="_blank" rel="noopener">診断がうまく表示されない場合は、別ウィンドウで開く →</a>
-    </p>
-  </section>
-
-  <!-- Self Check -->
-  <section class="section" id="check" style="background:var(--cream-deep);">
-    <div class="section-head reveal">
-      <p class="section-eyebrow">Self Check</p>
-      <h2 class="section-title">声・自己肯定感 セルフチェック</h2>
-      <p class="section-lead">当てはまるものに、気軽にチェックしてみてください。<br class="br-pc">あなたの"声"のクセや、心の状態が見えてくるかもしれません。</p>
-      <div class="divider"></div>
-    </div>
-
-    <div class="check-card reveal">
-      <ul class="check-list" id="checkList">
-        <li class="check-item"><label><input type="checkbox"><span>人前で話すと、声が震えたり早口になったりする</span></label></li>
-        <li class="check-item"><label><input type="checkbox"><span>自分の意見より、周りの意見を優先してしまう</span></label></li>
-        <li class="check-item"><label><input type="checkbox"><span>電話や面接など、声だけで判断される場面が苦手</span></label></li>
-        <li class="check-item"><label><input type="checkbox"><span>「本当はこう思っている」と、言葉にできないことが多い</span></label></li>
-        <li class="check-item"><label><input type="checkbox"><span>人からどう思われているか、常に気になってしまう</span></label></li>
-        <li class="check-item"><label><input type="checkbox"><span>大事な場面ほど、緊張して声が小さくなる</span></label></li>
-        <li class="check-item"><label><input type="checkbox"><span>頑張っているのに、なかなか自分に自信が持てない</span></label></li>
-        <li class="check-item"><label><input type="checkbox"><span>感情を抑え込んで、後から疲れてしまうことがある</span></label></li>
-        <li class="check-item"><label><input type="checkbox"><span>「話し方・声を変えたい」と思ったことがある</span></label></li>
-        <li class="check-item"><label><input type="checkbox"><span>自分が本当は何をしたいのか、わからなくなることがある</span></label></li>
-        <li class="check-item"><label><input type="checkbox"><span>人間関係のストレスで、体調に影響が出ることがある</span></label></li>
-        <li class="check-item"><label><input type="checkbox"><span>このままでいいのか、漠然とした不安がある</span></label></li>
-      </ul>
-      <div class="check-submit">
-        <button type="button" class="btn btn-line" id="checkSubmit">セルフチェック結果を見る</button>
-      </div>
-      <p class="check-hint">※ 医学的な診断ではありません。ご自身の傾向を知るための簡易チェックです。</p>
-    </div>
-
-    <div class="check-result" id="checkResult">
-      <p class="check-result-score">CHECKED <b id="checkScore">0</b> / 12</p>
-      <h3 class="check-result-title" id="checkTitle"></h3>
-      <p class="check-result-body" id="checkBody"></p>
-      <a class="btn btn-line" href="https://lin.ee/X1DwyEg" target="_blank" rel="noopener">LINE公式で無料相談を予約する</a>
     </div>
   </section>
 
@@ -1201,6 +1082,139 @@
       <div class="service-cta">
         <a class="btn btn-line" href="https://lin.ee/X1DwyEg" target="_blank" rel="noopener">法人・団体様のご相談はこちら</a>
       </div>
+    </div>
+  </section>
+
+  <!-- Voice Heart-Color Diagnosis -->
+  <section class="section" id="vtype">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">Voice × 12 Heart Colors</p>
+      <h2 class="section-title">声の心色診断</h2>
+      <p class="section-lead">3つの質問に答えるだけ、約1分でわかる声の心色診断。<br class="br-pc">あなたの声に宿る12色の"心色"を見つけてみましょう。</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="diag-frame reveal">
+      <iframe src="https://ehonnakagawa-lang.github.io/kokoroiro-shindan/" title="声の心色診断" loading="lazy"></iframe>
+    </div>
+    <p class="diag-fallback">
+      <a href="https://ehonnakagawa-lang.github.io/kokoroiro-shindan/" target="_blank" rel="noopener">診断がうまく表示されない場合は、別ウィンドウで開く →</a>
+    </p>
+  </section>
+
+  <!-- Self Check -->
+  <section class="section" id="check" style="background:var(--cream-deep);">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">Self Check</p>
+      <h2 class="section-title">声・自己肯定感 セルフチェック</h2>
+      <p class="section-lead">当てはまるものに、気軽にチェックしてみてください。<br class="br-pc">あなたの"声"のクセや、心の状態が見えてくるかもしれません。</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="check-card reveal">
+      <ul class="check-list" id="checkList">
+        <li class="check-item"><label><input type="checkbox"><span>人前で話すと、声が震えたり早口になったりする</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>自分の意見より、周りの意見を優先してしまう</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>電話や面接など、声だけで判断される場面が苦手</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>「本当はこう思っている」と、言葉にできないことが多い</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>人からどう思われているか、常に気になってしまう</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>大事な場面ほど、緊張して声が小さくなる</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>頑張っているのに、なかなか自分に自信が持てない</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>感情を抑え込んで、後から疲れてしまうことがある</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>「話し方・声を変えたい」と思ったことがある</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>自分が本当は何をしたいのか、わからなくなることがある</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>人間関係のストレスで、体調に影響が出ることがある</span></label></li>
+        <li class="check-item"><label><input type="checkbox"><span>このままでいいのか、漠然とした不安がある</span></label></li>
+      </ul>
+      <div class="check-submit">
+        <button type="button" class="btn btn-line" id="checkSubmit">セルフチェック結果を見る</button>
+      </div>
+      <p class="check-hint">※ 医学的な診断ではありません。ご自身の傾向を知るための簡易チェックです。</p>
+    </div>
+
+    <div class="check-result" id="checkResult">
+      <p class="check-result-score">CHECKED <b id="checkScore">0</b> / 12</p>
+      <h3 class="check-result-title" id="checkTitle"></h3>
+      <p class="check-result-body" id="checkBody"></p>
+      <a class="btn btn-line" href="https://lin.ee/X1DwyEg" target="_blank" rel="noopener">LINE公式で無料相談を予約する</a>
+    </div>
+  </section>
+
+  <!-- About / Story -->
+  <section class="section" id="about">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">Profile</p>
+      <h2 class="section-title">中川真樹子について</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="story reveal">
+      <div class="story-top">
+        <div class="story-photo">
+          <img src="../images/counseling-session.jpg" alt="セッションの様子（イメージ）" loading="lazy">
+        </div>
+        <p class="story-intro">
+          実は私自身、繊細な気質（HSP）ゆえに、人からの評価や期待に振り回されてきた過去があります。
+          子育てへの不安や自信のなさに悩んだ時期を経て気づいたのは、"自分の声"にこそ本当の答えがあるということ。
+          だからこそ、同じように悩む方の"心の声"に寄り添い、その人らしい輝きを引き出すお手伝いをしたいと思っています。
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <p class="tl-year">2000</p>
+          <p class="tl-text">求人広告会社にてキャッチコピー・ライティング・営業スキルを磨く。<b>九州支社売上1位</b>、Web媒体九州エリア連続1位、本社表彰を受賞。</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-year">2004</p>
+          <p class="tl-text">物流コンサルティング会社にて営業課長を務め、人事・営業・新規事業に携わる。</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-year">2009</p>
+          <p class="tl-text">結婚を機に退社。子ども劇場の運営・事務局、保護者会会長を務める。</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-year">2019</p>
+          <p class="tl-text"><b>EQ絵本講師®</b>となり、講座をスタート。</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-year">2021</p>
+          <p class="tl-text"><b>マヤ暦アドバイザー</b>として活動を開始。</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-year">現在</p>
+          <p class="tl-text">
+            心理学・コーチングを学び資格取得講座を開催するかたわら、モデレーターやボイストレーニングにも携わる中で
+            「声解析」に出会う。現在は声の周波数からわかる"心の声"を読み解き、カウンセリング・コーチング・各種講座を展開。
+            AIスクールのエージェンシー活動やイベント企画にも力を注いでいる。
+          </p>
+        </div>
+      </div>
+
+      <div class="story-close">
+        言葉と声で自然に選ばれる声ブランディング専門家として——<br>
+        今日から、あなたの声とメンタルを整え、あなたらしい未来を一緒に育てていきましょう。
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials -->
+  <section class="section-tight reveal">
+    <div class="section-head" style="margin-bottom:36px;">
+      <p class="section-eyebrow">Qualification</p>
+      <h2 class="section-title">資格・肩書き</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="cred-grid">
+      <div class="cred-card">声解析士<br>マスターインストラクター</div>
+      <div class="cred-card">色彩心理</div>
+      <div class="cred-card">自己肯定感児童教育メソッド<br>英才教育コーチ</div>
+      <div class="cred-card">HSPカウンセラー</div>
+      <div class="cred-card">アドラー流<br>メンタルトレーナー</div>
+      <div class="cred-card">EQ絵本講師®<br>シニアインストラクター</div>
+      <div class="cred-card">マヤ暦アドバイザー</div>
+      <div class="cred-card">VLCコーチング</div>
+      <div class="cred-card">シャインコーチング</div>
     </div>
   </section>
 
