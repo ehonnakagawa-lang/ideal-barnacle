@@ -571,6 +571,17 @@
   .corp-card h3{margin-top:8px;font-family:"Noto Serif JP",serif;font-weight:700;font-size:15px;color:var(--plum-deep);}
   .corp-card p{margin-top:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.9;}
 
+  .corp-proof{max-width:960px;margin:0 auto 40px;background:#fff;border-radius:22px;padding:32px 28px;border:1px solid var(--rose-pale);box-shadow:0 16px 36px -22px rgba(139,90,104,.26);}
+  .corp-proof-label{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:13px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;text-align:center;}
+  .corp-proof-grid{margin-top:18px;display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:760px){ .corp-proof-grid{grid-template-columns:repeat(3,1fr);} }
+  .corp-proof-item{text-align:center;padding:0 8px;}
+  .corp-proof-item b{display:block;font-family:"Noto Serif JP",serif;font-weight:700;font-size:14.5px;color:var(--plum-deep);}
+  .corp-proof-item span{display:block;margin-top:6px;font-size:12px;color:var(--ink-soft);line-height:1.8;}
+  .corp-topics{margin-top:26px;padding-top:26px;border-top:1px solid var(--rose-pale);display:flex;flex-wrap:wrap;justify-content:center;gap:8px;}
+  .corp-topics-note{margin-top:14px;text-align:center;font-size:11.5px;color:var(--ink-soft);}
+  .btn-mail{background:linear-gradient(135deg,var(--plum),var(--plum-deep));color:#fff;box-shadow:0 10px 24px -8px rgba(139,90,104,.5);}
+
   /* ---------- achievements ---------- */
   .ach-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:760px;margin:0 auto;}
   @media(min-width:640px){ .ach-grid{grid-template-columns:1fr 1fr;} }
@@ -1090,14 +1101,39 @@
       </div>
     </div>
 
+    <div class="corp-proof reveal">
+      <p class="corp-proof-label">Track Record</p>
+      <div class="corp-proof-grid">
+        <div class="corp-proof-item">
+          <b>営業課長経験</b>
+          <span>物流コンサルティング会社で営業課長を務め、人事・営業・新規事業を担当</span>
+        </div>
+        <div class="corp-proof-item">
+          <b>九州支社売上1位</b>
+          <span>求人広告会社でのキャッチコピー・営業実績、Web媒体九州エリア連続1位</span>
+        </div>
+        <div class="corp-proof-item">
+          <b>登壇・講演実績多数</b>
+          <span>講演会主催・コンベンション司会・ラジオ出演・イベント企画など</span>
+        </div>
+      </div>
+      <div class="corp-topics">
+        <span class="badge-pill">自分を表現する声と話し方</span>
+        <span class="badge-pill">声が変わると人生が変わる</span>
+        <span class="badge-pill">声の癖</span>
+        <span class="badge-pill">クレーム対応に効く声のペーシング</span>
+      </div>
+      <p class="corp-topics-note">これまでの講演・講座テーマの一例です。貴社のご要望に合わせてテーマをカスタマイズいたします。</p>
+    </div>
+
     <div class="press-card reveal">
       <span class="service-tag" style="background:rgba(139,90,104,.08);color:var(--plum);">CORPORATE PROGRAM</span>
       <p class="press-bio">
         研修は対面・オンラインいずれにも対応し、1名からのご相談から複数名の社内研修まで、規模に応じてプログラムをご提案します。声解析を通じて、社員一人ひとりの強みを可視化し、組織全体のコミュニケーション力向上につなげます。
       </p>
-      <p class="press-note">研修内容・料金は、貴社の課題やご要望に応じて個別にお見積もりいたします。まずはお気軽にご相談ください。</p>
+      <p class="press-note">研修料金の目安については、人数・回数により異なるため、まずはお問い合わせください。</p>
       <div class="service-cta">
-        <a class="btn btn-line" href="https://lin.ee/X1DwyEg" target="_blank" rel="noopener">法人・団体様のご相談はこちら</a>
+        <a class="btn btn-mail" href="mailto:ehon.nakagawa@gmail.com">メールで相談する</a>
       </div>
     </div>
   </section>
